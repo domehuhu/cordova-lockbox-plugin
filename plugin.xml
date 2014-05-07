@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="domehuhu.cordova.plugins.lockbox" version="0.0.1">
+    <name>Lockbox</name>
+    <description>Cordova Lockbox Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,keychain,lockbox</keywords>
+    <js-module src="www/lockbox.js" name="lockbox">
+        <clobbers target="Lockbox" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="LockBoxPlugin">
+                <param name="ios-package" value="LockBoxPlugin"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/LockBoxPlugin.h" />
+        <header-file src="src/ios/LockBox.h" />        
+        <source-file src="src/ios/LockBoxPlugin.m" />
+        <source-file src="src/ios/LockBox.m" />        
+    </platform>
+</plugin>
